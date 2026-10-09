@@ -1,0 +1,406 @@
+/* ==========================================
+   VARIABLES Y ESTILOS BASE
+   ========================================== */
+:root {
+    --verde-principal: #2d7a58;
+    --verde-hover: #225c42;
+    --crema-fondo: #f5ece1;
+    --blanco: #ffffff;
+    --naranja-acento: #d97745;
+    --naranja-hover: #c26333;
+    --texto-oscuro: #1d3b2b;
+    --texto-suave: #4a5d52;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--crema-fondo);
+    color: var(--texto-oscuro);
+    line-height: 1.6;
+}
+
+/* ==========================================
+   ENCABEZADO Y NAVEGACIÓN (HEADER/NAV)
+   ========================================== */
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--blanco);
+    padding: 15px 8%;
+    border-bottom: 3px solid var(--verde-principal);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.logo {
+    text-decoration: none;
+    color: var(--verde-principal);
+    font-size: 1.3rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    align-items: center;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--verde-principal);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.menu a:hover {
+    color: var(--naranja-acento);
+}
+
+.menu a.activo {
+    background-color: var(--verde-principal);
+    color: var(--blanco);
+}
+
+/* ==========================================
+   SECCIONES GENERALES Y ENCABEZADOS DE PÁGINA
+   ========================================== */
+main {
+    min-height: 80vh;
+}
+
+.encabezado-pagina {
+    text-align: center;
+    padding: 40px 20px 20px;
+}
+
+.etiqueta {
+    color: var(--naranja-acento);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1.2px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+h1 {
+    color: var(--verde-principal);
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    font-weight: 800;
+}
+
+.seccion {
+    padding: 40px 8%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.seccion h2 {
+    color: var(--verde-principal);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.texto-centro {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 30px;
+    color: var(--texto-suave);
+    font-size: 1.05rem;
+}
+
+/* ==========================================
+   BOTONES
+   ========================================== */
+.boton {
+    display: inline-block;
+    background-color: var(--naranja-acento);
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.boton:hover {
+    background-color: var(--naranja-hover);
+    transform: translateY(-2px);
+}
+
+.boton-secundario {
+    background-color: transparent;
+    color: var(--verde-principal);
+    border: 2px solid var(--verde-principal);
+}
+
+.boton-secundario:hover {
+    background-color: var(--verde-principal);
+    color: var(--blanco);
+}
+
+/* ==========================================
+   INICIO (INDEX) - HERO SECTION
+   ========================================== */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 8%;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-contenido {
+    flex: 1;
+}
+
+.hero-contenido p {
+    color: var(--texto-suave);
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+.hero-imagen {
+    flex: 1;
+    max-width: 480px;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+.botones {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* ==========================================
+   TARJETAS GENERALES (INICIO Y DONACIONES)
+   ========================================== */
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.tarjeta {
+    background-color: var(--blanco);
+    padding: 30px 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-4px);
+}
+
+.icono {
+    font-size: 2.2rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.tarjeta h3 {
+    color: var(--verde-principal);
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.tarjeta p, .tarjeta ul {
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+}
+
+.tarjeta ul {
+    list-style-position: inside;
+    margin-top: 8px;
+}
+
+.tarjeta ul li {
+    margin-bottom: 6px;
+}
+
+/* ==========================================
+   GALERÍA DE MASCOTAS (ADOPCIONES)
+   ========================================== */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.mascota {
+    background-color: var(--blanco);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.mascota img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.mascota-contenido {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.mascota-contenido h3 {
+    color: var(--verde-principal);
+    font-size: 1.4rem;
+    margin: 5px 0 10px;
+}
+
+.mascota-contenido p {
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+}
+
+.mascota-contenido .boton {
+    margin-top: 15px;
+    align-self: start;
+    width: 100%;
+}
+
+/* ==========================================
+   SECCIÓN MENSAJE Y CENTRO DE ACOPIO
+   ========================================== */
+.mensaje {
+    background-color: var(--verde-principal);
+    color: var(--blanco);
+    text-align: center;
+    padding: 50px 8%;
+    margin: 30px 0;
+}
+
+.mensaje h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.mensaje p {
+    max-width: 700px;
+    margin: 0 auto 20px;
+    font-size: 1.1rem;
+    opacity: 0.95;
+}
+
+.lista-requisitos {
+    text-align: left;
+    max-width: 550px;
+    margin: 0 auto 20px;
+    list-style-position: inside;
+    font-size: 1.05rem;
+}
+
+.lista-requisitos li {
+    margin-bottom: 8px;
+}
+
+.centro-acopio {
+    background-color: var(--blanco);
+    padding: 40px;
+    border-radius: 14px;
+    max-width: 800px;
+    margin: 30px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-left: 6px solid var(--naranja-acento);
+}
+
+.centro-acopio h2 {
+    color: var(--verde-principal);
+    margin-bottom: 15px;
+}
+
+.datos-acopio p {
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
+
+.nota {
+    font-size: 0.88rem;
+    color: var(--texto-suave);
+    font-style: italic;
+    margin-top: 15px;
+}
+
+.llamada {
+    text-align: center;
+    background-color: var(--blanco);
+    border-radius: 14px;
+    margin-bottom: 50px;
+}
+
+.llamada h2 {
+    margin-bottom: 10px;
+}
+
+.llamada p {
+    margin-bottom: 20px;
+    color: var(--texto-suave);
+}
+
+/* ==========================================
+   PIE DE PÁGINA (FOOTER)
+   ========================================== */
+.pie {
+    background-color: var(--verde-principal);
+    color: var(--blanco);
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 40px;
+}
+
+.pie p {
+    margin: 4px 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* Responsivo para dispositivos móviles */
+@media (max-width: 768px) {
+    .encabezado {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 5%;
+    }
+
+    .botones {
+        justify-content: center;
+    }
+}
